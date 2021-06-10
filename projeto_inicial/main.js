@@ -1,6 +1,7 @@
-/*-Metodo Criando Tarefa------------------------------------------------------------------------*/
+import BotaoConclui from "../componentes/concluiTarefa.js";
+import Botaoremove from "../componentes/removeTarefa.js";
 
-( ()=> {
+/*-Metodo Criando Tarefa------------------------------------------------------------------------*/
     const criarTarefa = (evento) => {
 
         /*-preventDefault: Previnir comportamento padrão---------------------*/
@@ -54,34 +55,4 @@
     */
     novaTarefa.addEventListener('click', criarTarefa);
 
-    /*-Componente Botao conclui-----------------------------------------------------------------*/
-    const BotaoConclui = () => {
-        const botaoConclui = document.createElement('button');
-        /*Adicionando classe CSS ao botão*/
-        botaoConclui.classList.add('check-button');
-
-        /*Adicionando texto ao botão */
-        botaoConclui.innerText = "concluir";
-        botaoConclui.addEventListener('click', concluirtarefa);
-        return botaoConclui;
-    }
-    const concluirtarefa = (evento) => {
-        const botaoConclui = evento.target;
-        const tarefacompleta = botaoConclui.parentElement;
-        tarefacompleta.classList.toggle('done');
-    }
-    /*-Componente Botao remove-----------------------------------------------------------------*/
-    const Botaoremove = ()=>{
-        const botaoremove = document.createElement('button');
-        botaoremove.innerText = "Remover";
-        botaoremove.addEventListener('click', removetarefa);
-        return botaoremove;
-    }
-    const removetarefa = (evento)=>{
-        const botaoRemove  = evento.target;
-        const tarefacompleta = botaoRemove.parentElement;
-        tarefacompleta.remove();
-        return botaoRemove
-    }
-})(); /* () Função de invocação imediata*/
 
